@@ -5,8 +5,8 @@ from django.db import models
 
 class RoutorDetail(models.Model):
     Ip_address = models.GenericIPAddressField(unique=True)
-    Loopback = models.GenericIPAddressField(null=False)
-    Hostname = models.CharField(max_length=30, null=False)
+    Loopback = models.GenericIPAddressField(unique=True, null=False)
+    Hostname = models.CharField(unique=True, max_length=30, null=False)
     sap_id = models.CharField(max_length=100, null=False)
     type = models.CharField(max_length=30, null=False)
 
